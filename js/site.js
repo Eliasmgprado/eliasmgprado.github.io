@@ -60,8 +60,14 @@ $(window).scroll(toggleNavbarTextColor)
 // });
 
 $('.nav-link').hover(function(){
-    $(this).parent().addClass('active');
+    console.log('hover in')
+    if (!is_touch_device()) {
+        $(this).parent().addClass('active');
+    } else if (!$(this).parent().hasClass('dropdown')) {
+        $(this).parent().addClass('active');
+    }
 }, function() {
+    console.log('hover out')
     if (!$(this).parent().hasClass('dropdown')) {
         $(this).parent().removeClass('active')
     };
@@ -79,14 +85,25 @@ function is_touch_device() {
         || navigator.maxTouchPoints;       // works on IE10/11 and Surface
   };
 
-$('li.dropdown').click(function(e){
-    console.log('out');
-    e.preventDefault();
-    if ($(e.target).hasClass('active')) {
-        $(this).removeClass('active');
-        $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+$('li.dropdown').on("click", function(e){
+    if (is_touch_device()) {
+        e.preventDefault();
+    };
+    if ($(e.target).hasClass('active') || $(e.target).parent().hasClass('active') ) {
+        if ($(e.target).parent().hasClass('dropdown')) {
+            $(e.target).parent().removeClass('active');
+            $(e.target).parent().find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+        } else {
+            $(e.target).removeClass('active');
+            $(e.target).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+        }
     } else {
-        $(this).addClass('active');
-        $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+        if ($(e.target).parent().hasClass('dropdown')) {
+            $(e.target).parent().addClass('active');
+            $(e.target).parent().find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+        } else {
+            $(e.target).addClass('active');
+            $(e.target).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+        }
     };
 });
