@@ -78,5 +78,8 @@ $('li.dropdown .nav-link').click(function(){
     if ($(this).parent().hasClass('active')) {
         $(this).parent().removeClass('active');
         $(this).parent().find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
-    } 
+    } else {
+        $(this).parent().addClass('active');
+        $(this).parent().find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+    }
 });
