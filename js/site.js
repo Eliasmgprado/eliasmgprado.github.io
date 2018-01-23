@@ -73,3 +73,10 @@ $('ul.navbar-nav li.dropdown').hover(function() {
     $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
     $(this).removeClass('active')
 });
+
+$('li.dropdown .nav-link').click(function(){
+    if ($(this).parent().hasClass('active')) {
+        $(this).parent().removeClass('active');
+        $(this).parent().find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+    } 
+});
