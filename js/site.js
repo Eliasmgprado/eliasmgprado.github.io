@@ -74,12 +74,19 @@ $('ul.navbar-nav li.dropdown').hover(function() {
     $(this).removeClass('active')
 });
 
-$('li.dropdown .nav-link').click(function(){
-    if ($(this).parent().hasClass('active')) {
-        $(this).parent().removeClass('active');
-        $(this).parent().find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+function is_touch_device() {
+    return 'ontouchstart' in window        // works on most browsers 
+        || navigator.maxTouchPoints;       // works on IE10/11 and Surface
+  };
+
+$('li.dropdown').click(function(e){
+    console.log('out');
+    e.preventDefault();
+    if ($(e.target).hasClass('active')) {
+        $(this).removeClass('active');
+        $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
     } else {
-        $(this).parent().addClass('active');
-        $(this).parent().find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
-    }
+        $(this).addClass('active');
+        $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+    };
 });
