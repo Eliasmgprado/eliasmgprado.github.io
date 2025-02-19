@@ -49,7 +49,7 @@ const About = () => {
           <Grid.Col span={{ base: 12, sm: 6 }} p="xl">
             <Center h="100%" w="100%">
               <Image
-                src="img/PDAC22_mod.jpg"
+                src={matches ? "img/PDAC22_mod.jpg" : "img/PDAC22_mod_lit.jpg"}
                 radius="100%"
                 style={{ outline: "10px solid #f1f3f5", userSelect: "none" }}
               />
