@@ -7,6 +7,7 @@ import HomeHeader from "./HomeHeader";
 // import { useMediaQuery } from "@mantine/hooks";
 import About from "../Sections/About";
 import { FaChevronDown } from "react-icons/fa";
+import { useMediaQuery } from "@mantine/hooks";
 
 export interface TopNavigationProps {
   /** Table of Contents Button Click */
@@ -17,7 +18,8 @@ export interface TopNavigationProps {
 
 const TopNavigation = ({ tocClick, scrollIntoView }: TopNavigationProps) => {
   // const navigate = useNavigate();
-  // const matches = useMediaQuery("(min-width: 48em)");
+  const matches = useMediaQuery("(min-width: 48em)");
+  console.log(matches);
   return (
     <>
       <BackgroundImage src="img/about_bg.jpeg">
@@ -25,20 +27,25 @@ const TopNavigation = ({ tocClick, scrollIntoView }: TopNavigationProps) => {
           <HomeHeader tocClick={tocClick} variant={"transparent"} />
           <Container size="lg" mih={"100vh"} mt={"-76px"} pt={"76px"}>
             <About />
-            <Center>
-              <ActionIcon
-                onClick={() => {
-                  scrollIntoView({
-                    alignment: "start",
-                  });
-                }}
-                radius="xl"
-                variant="filled"
-                style={{ position: "absolute", bottom: "3em" }}
-              >
-                <FaChevronDown />
-              </ActionIcon>
-            </Center>
+            {matches && (
+              <Center>
+                <ActionIcon
+                  onClick={() => {
+                    scrollIntoView({
+                      alignment: "start",
+                    });
+                  }}
+                  radius="xl"
+                  variant="filled"
+                  style={{
+                    position: "absolute",
+                    bottom: "3em",
+                  }}
+                >
+                  <FaChevronDown />
+                </ActionIcon>
+              </Center>
+            )}
           </Container>
         </Container>
       </BackgroundImage>
