@@ -1,0 +1,37 @@
+.card {
+  background-color: var(--mantine-color-body);
+  position: relative;
+  cursor: pointer;
+
+  /* &:hover {
+    box-shadow: 0 0 5px 1px rgba(0,0,0,0.1);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+  } */
+}
+
+.title {
+  font-weight: bold;
+  font-family: Greycliff CF, var(--mantine-font-family);
+  line-height: 1.2;
+}
+
+.body {
+  padding: var(--mantine-spacing-md);
+}
+
+.badge {
+  position: absolute;
+  top: var(--mantine-spacing-xs);
+  right: 12px;
+  pointer-events: none;
+}
+
+.badge_modal {
+  position: absolute;
+  bottom: var(--mantine-spacing-xs);
+  right: 12px;
+  pointer-events: none;
+}
+
+.footer {
+}
