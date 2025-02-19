@@ -14,7 +14,11 @@ import { TbWorldSearch } from "react-icons/tb";
 import { researchData } from "./ResearchData";
 import ResearchCard from "./ResearchCard";
 
-const Research = () => {
+interface ResearchProps {
+  scrollViewRef: React.RefObject<HTMLDivElement>;
+}
+
+const Research = ({ scrollViewRef }: ResearchProps) => {
   const matches = useMediaQuery("(min-width: 48em)");
 
   const sortedResearchs = useMemo(() => {
@@ -32,6 +36,7 @@ const Research = () => {
 
   return (
     <Container
+      ref={scrollViewRef}
       id="Research"
       py={!matches ? "2rem" : "6rem"}
       style={{ borderBottom: "1px solid rgba(34,36,38,.15)" }}

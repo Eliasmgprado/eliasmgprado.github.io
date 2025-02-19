@@ -2,7 +2,6 @@ import {
   ActionIcon,
   Box,
   Group,
-  Image,
   AppShell,
   Title,
   NavLink,

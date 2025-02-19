@@ -1,12 +1,8 @@
 import {
-  ActionIcon,
   Center,
   Container,
   ContainerProps,
-  Group,
-  Text,
 } from "@mantine/core";
-import { FaLinkedin } from "react-icons/fa";
 import classes from "./AppFooter.module.css";
 
 export interface AppFooterProps extends ContainerProps {

@@ -1,16 +1,14 @@
 import {
-  Box,
   Burger,
   Button,
   Container,
   ContainerProps,
   Group,
-  Image,
 } from "@mantine/core";
 import { MouseEventHandler } from "react";
 import classes from "./HomeHeader.module.css";
 import cx from "clsx";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import { useMediaQuery } from "@mantine/hooks";
 
@@ -38,7 +36,7 @@ const HomeHeader = ({
   variant,
   ...props
 }: TopNavigationProps) => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const matches = useMediaQuery("(min-width: 48em)");
   return (
     <Container
