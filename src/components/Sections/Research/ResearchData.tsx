@@ -57,7 +57,7 @@ export const researchPartners: ResearchPartner[] = [
   {
     id: 7,
     name: "Observatório Nacional (ON)",
-    logo: "img/partners/on.jpg",
+    logo: "img/partners/on.webp",
     url: "https://www.gov.br/observatorio/pt-br",
   },
   {
