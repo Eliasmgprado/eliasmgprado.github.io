@@ -1,16 +1,4 @@
-import {
-  BackgroundImage,
-  Badge,
-  Button,
-  Card,
-  Center,
-  Group,
-  Image,
-  Modal,
-  Stack,
-  Text,
-  Title,
-} from "@mantine/core";
+import { Badge, Button, Card, Center, Group, Image, Text } from "@mantine/core";
 import {
   ResearchData,
   ResearchPartner,
