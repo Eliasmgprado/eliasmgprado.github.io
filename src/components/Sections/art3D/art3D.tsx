@@ -100,7 +100,7 @@ const Art3D = () => {
               }
               return (
                 <AspectRatio ratio={1} key={index}>
-                  <video controls muted>
+                  <video autoPlay loop controls muted>
                     <source src={art.src} type="video/mp4" />
                   </video>
                 </AspectRatio>
