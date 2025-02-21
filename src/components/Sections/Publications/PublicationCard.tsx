@@ -54,7 +54,7 @@ const PublicationCard = ({ publication }: PublicationCardProps) => {
             {publication.abstract}
           </Text>
           {publication?.keywords && (
-            <Text lineClamp={1} mb="sm" size="sm">
+            <Text lineClamp={3} mb="sm" size="sm">
               {`Keywords: ${publication.keywords}`}
             </Text>
           )}
