@@ -34,14 +34,14 @@ const PublicationCard = ({ publication }: PublicationCardProps) => {
           miw={260}
           style={{ flexGrow: matches ? undefined : 1 }}
         />
+        <Badge
+          variant="gradient"
+          gradient={{ from: "blue", to: "purple" }}
+          className={matches ? classes.badge : classes.badge_mobile}
+        >
+          {publication.publicationType}
+        </Badge>
         <Stack px="md" gap={0} py="sm" className={classes.content}>
-          <Badge
-            variant="gradient"
-            gradient={{ from: "blue", to: "purple" }}
-            className={classes.badge}
-          >
-            {publication.publicationType}
-          </Badge>
           <Title order={4} className={classes.title}>
             {publication.title}
           </Title>

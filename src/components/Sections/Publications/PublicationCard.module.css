@@ -19,6 +19,13 @@
   pointer-events: none;
 }
 
+.badge_mobile {
+  position: absolute;
+  top: calc(222px - 20px - var(--mantine-spacing-xs));
+  right: 12px;
+  pointer-events: none;
+}
+
 .content {
   /* flex-grow: 1;
   align-self: stretch; */
