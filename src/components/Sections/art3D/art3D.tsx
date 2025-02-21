@@ -8,11 +8,7 @@ import {
   Title,
 } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
-// import { FaRegNewspaper } from "react-icons/fa6";
-// import { publicationsData } from "./PublicationsData";
-// import PublicationCard from "./PublicationCard";
-// import { useMemo } from "react";
-import { BsBadge3dFill } from "react-icons/bs";
+import { FaCube } from "react-icons/fa6";
 
 const ART_LIST = [
   { label: "VMS", src: "videos/art3d/vms.mp4", type: "video" },
@@ -71,19 +67,6 @@ const ART_LIST = [
 const Art3D = () => {
   const matches = useMediaQuery("(min-width: 48em)");
 
-  // const sortedPublications = useMemo(() => {
-  //   //   sort by publication.year and publication.firstAuthor
-  //   // with the most recent publication first and the first author = true first
-
-  //   return publicationsData.sort((a, b) => {
-  //     if (a.year < b.year) return 1;
-  //     if (a.year > b.year) return -1;
-  //     if (a.firstAuthor && !b.firstAuthor) return -1;
-  //     if (!a.firstAuthor && b.firstAuthor) return 1;
-  //     return 0;
-  //   });
-  // }, []);
-
   return (
     <Container
       id="Art3D"
@@ -94,13 +77,10 @@ const Art3D = () => {
       <Container size="lg">
         <Stack>
           <Group>
-            <BsBadge3dFill size={32} />
+            <FaCube size={32} />
             <Title order={1}>3D Art</Title>
           </Group>
           <Divider mb="md" />
-          {/* {sortedPublications.map((publication, index) => {
-            return <PublicationCard publication={publication} key={index} />;
-          })} */}
           <SimpleGrid
             cols={{ base: 1, sm: 2, lg: 3 }}
             spacing={{ base: 10, sm: "xl" }}
@@ -120,16 +100,9 @@ const Art3D = () => {
               }
               return (
                 <AspectRatio ratio={1} key={index}>
-                  <video autoPlay loop controls muted>
+                  <video controls muted>
                     <source src={art.src} type="video/mp4" />
                   </video>
-                  {/* <iframe
-                    src={art.src}
-                    title={art.label}
-                    style={{ border: 0 }}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  /> */}
                 </AspectRatio>
               );
             })}

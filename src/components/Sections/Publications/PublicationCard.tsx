@@ -1,4 +1,5 @@
 import {
+  ActionIcon,
   Badge,
   Button,
   Card,
@@ -7,10 +8,11 @@ import {
   Stack,
   Text,
   Title,
+  Tooltip,
 } from "@mantine/core";
 import { Publication } from "./PublicationsData";
 import classes from "./PublicationCard.module.css";
-import { FaExternalLinkAlt } from "react-icons/fa";
+import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import { useMediaQuery } from "@mantine/hooks";
 
 interface PublicationCardProps {
@@ -51,7 +53,22 @@ const PublicationCard = ({ publication }: PublicationCardProps) => {
           <Text lineClamp={matches ? 2 : 5} mb="sm">
             {publication.abstract}
           </Text>
+          {publication?.keywords && (
+            <Text lineClamp={1} mb="sm" size="sm">
+              {`Keywords: ${publication.keywords}`}
+            </Text>
+          )}
           <Group wrap="nowrap" gap="xs" justify="end">
+            {publication?.github && (
+              <Tooltip label="GitHub repository" openDelay={500} withArrow>
+                <ActionIcon
+                  onClick={() => window.open(publication.github)}
+                  color="black"
+                >
+                  <FaGithub size="1.3em" />
+                </ActionIcon>
+              </Tooltip>
+            )}
             <Button
               variant="subtle"
               color="blue"

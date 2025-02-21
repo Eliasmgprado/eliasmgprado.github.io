@@ -25,7 +25,7 @@ const Research = ({ scrollViewRef }: ResearchProps) => {
     //   sort by publication.year and publication.firstAuthor
     // with the most recent publication first and the first author = true first
 
-    return researchData.sort((a, b) => {
+    return researchData.slice().sort((a, b) => {
       const a_year = +a.startDate.split("/")[1];
       const b_year = +b.startDate.split("/")[1];
       if (a_year < b_year) return 1;

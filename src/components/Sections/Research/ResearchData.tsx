@@ -9,31 +9,31 @@ export const researchPartners: ResearchPartner[] = [
   {
     id: -1,
     name: "Geological Survey of Brazil (SGB)",
-    logo: "img/partners/sgb.png",
+    logo: "img/partners/sgb.webp",
     url: "https://www.sgb.gov.br/",
   },
   {
     id: 0,
     name: "Center for Applied Geociences (CGA)",
-    logo: "img/partners/CGA_k.png",
+    logo: "img/partners/CGA_k.webp",
     url: "https://www.sgb.gov.br/",
   },
   {
     id: 1,
     name: "Oman Chromite Company",
-    logo: "img/partners/occ.png",
+    logo: "img/partners/occ.webp",
     url: "https://www.omanchromite.com/",
   },
   {
     id: 2,
     name: "Petrobras",
-    logo: "img/partners/petrobras.png",
+    logo: "img/partners/petrobras.webp",
     url: "https://petrobras.com.br/",
   },
   {
     id: 3,
     name: "Universidade Federal de Santa Catarina (UFSC)",
-    logo: "img/partners/ufsc.png",
+    logo: "img/partners/ufsc.webp",
     url: "https://ufsc.br/",
   },
   {
@@ -45,13 +45,13 @@ export const researchPartners: ResearchPartner[] = [
   {
     id: 5,
     name: "Vale",
-    logo: "img/partners/vale.png",
+    logo: "img/partners/vale.webp",
     url: "https://vale.com/",
   },
   {
     id: 6,
     name: "University du Quebec à Chicoutimi",
-    logo: "img/partners/uaqc.png",
+    logo: "img/partners/uaqc.webp",
     url: "https://www.uqac.ca/",
   },
   {
@@ -63,13 +63,13 @@ export const researchPartners: ResearchPartner[] = [
   {
     id: 8,
     name: "Institute for Enviromental Analytics (IEA)",
-    logo: "img/partners/IEA.png",
+    logo: "img/partners/IEA.webp",
     url: "https://www.the-iea.org/",
   },
   {
     id: 9,
     name: "University of Campinas (Unicamp)",
-    logo: "img/partners/UNICAMP.png",
+    logo: "img/partners/UNICAMP.webp",
     url: "https://unicamp.br/",
   },
 ];
@@ -139,7 +139,7 @@ export const researchData: ResearchData[] = [
     topic: "Software",
     startDate: "01/2022",
     endDate: "",
-    img: "img/research/rockplot.png",
+    img: "img/research/rockplot.webp",
     url: "https://eliasmgprado.github.io/RockPlot",
   },
   {

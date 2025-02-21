@@ -21,6 +21,7 @@ import classes from "./ResearchCard.module.css";
 import { memo, useMemo } from "react";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { useDisclosure } from "@mantine/hooks";
+import ResearchCardModal from "./ResearchCardModal";
 
 interface ResearchCardProps {
   research: ResearchData;
@@ -84,7 +85,9 @@ const ResearchCard = ({ research }: ResearchCardProps) => {
           </Text>
         </Card.Section>
         <Card.Section py="md" className={classes.footer}>
-          <Group justify="center" gap={"0 10"}>{partnersImgs}</Group>
+          <Group justify="center" gap={"0 10"}>
+            {partnersImgs}
+          </Group>
           {research.url && (
             <Center>
               <Button
@@ -101,36 +104,12 @@ const ResearchCard = ({ research }: ResearchCardProps) => {
           )}
         </Card.Section>
       </Card>
-      <Modal.Root opened={opened} onClose={close} size="xl" centered>
-        <Modal.Overlay backgroundOpacity={0.1} blur={3} />
-        <Modal.Content>
-          <BackgroundImage src={research.img} component={Modal.Header} h={200}>
-            <Badge
-              className={classes.badge_modal}
-              variant="gradient"
-              gradient={{ from: "blue", to: "purple" }}
-            >
-              {research.topic}
-            </Badge>
-            <Group justify="end" align="top">
-              <Modal.CloseButton c="white" variant="transparent" />
-            </Group>
-          </BackgroundImage>
-          <Modal.Body>
-            <Center mt="md">
-              <Stack>
-                <Title tt="capitalize" order={3}>
-                  {research.title}
-                </Title>
-                <Text style={{ textAlign: "justify" }}>
-                  {research.description}
-                </Text>
-                <Group justify="center">{partnersImgs}</Group>
-              </Stack>
-            </Center>
-          </Modal.Body>
-        </Modal.Content>
-      </Modal.Root>
+      <ResearchCardModal
+        opened={opened}
+        close={close}
+        research={research}
+        partners={partners}
+      />
     </>
   );
 };

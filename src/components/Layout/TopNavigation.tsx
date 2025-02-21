@@ -22,7 +22,7 @@ const TopNavigation = ({ tocClick, scrollIntoView }: TopNavigationProps) => {
   console.log(matches);
   return (
     <>
-      <BackgroundImage src="img/about_bg.jpeg">
+      <BackgroundImage src="img/about_bg.webp">
         <Container fluid py="1em" className={classes.container} id="Index">
           <HomeHeader tocClick={tocClick} variant={"transparent"} />
           <Container size="lg" mih={"100vh"} mt={"-76px"} pt={"76px"}>
