@@ -39,7 +39,7 @@ export const researchPartners: ResearchPartner[] = [
   {
     id: 4,
     name: "Grupo de Análise de Bacias e Reservatórios (ANBA)",
-    logo: "img/partners/anba.jpg",
+    logo: "img/partners/anba.webp",
     url: "https://anba.ufsc.br/",
   },
   {
